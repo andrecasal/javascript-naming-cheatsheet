@@ -10,10 +10,10 @@ This is a fork of https://github.com/kettanaito/naming-cheatsheet
 
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
-- [Short Intuitive Descriptive](#short-intuitive-descriptive)
+- [Short, Intuitive and Descriptive](#short-intuitive-and-descriptive)
 - [Avoid contractions](#avoid-contractions)
 - [Avoid context duplication](#avoid-context-duplication)
-- [Reflect the expected result](#reflect-the-expected-result)
+- [Be consistent](#be-consistent)
 - [Naming functions](#naming-functions)
   - [A/HC/LC/A pattern](#ahclca-pattern)
     - [Actions](#actions)
@@ -25,7 +25,7 @@ This is a fork of https://github.com/kettanaito/naming-cheatsheet
 
 Naming things is hard. This sheet attempts to make it easier.
 
-Although these suggestions can be applied to any programming language, I will use JavaScript and React to illustrate them in practice.
+Although these suggestions can be applied to any programming language (except those that directly go against these conventions, like [Python](https://www.python.org/dev/peps/pep-0008/)), I will use JavaScript and React to illustrate them in practice.
 
 ## English language
 
