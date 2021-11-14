@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://github.com/kettanaito/naming-cheatsheet">
-    <img src="./naming-cheatsheet.png" alt="Naming cheatsheet" />
+  <a href="https://github.com/andrecasal/opinionated-naming-cheatsheet">
+    <img src="./naming-cheatsheet.png" alt="Opinionated naming cheatsheet" />
   </a>
 </p>
 
-# Naming cheatsheet
+# Opinionated naming cheatsheet
 
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
@@ -13,7 +13,7 @@
 - [Avoid context duplication](#avoid-context-duplication)
 - [Reflect the expected result](#reflect-the-expected-result)
 - [Naming functions](#naming-functions)
-  - [A/HC/LC pattern](#ahclc-pattern)
+  - [A/HC/LC/A pattern](#ahclca-pattern)
     - [Actions](#actions)
     - [Context](#context)
     - [Prefixes](#prefixes)
@@ -43,23 +43,21 @@ const friends = ['Kate', 'John']
 
 ## Naming convention
 
-Pick **one** naming convention and follow it. It may be `camelCase`, `PascalCase`, `snake_case`, or anything else, as long as it remains consistent. Many programming languages have their own traditions regarding naming conventions; check the documentation for your language or study some popular repositories on Github!
+Pick the `camelCase` naming convention, follow it and remain consistent. If you need to start classes with uppercase, pick `PascalCase` for those.
 
 ```js
 /* Bad */
 const page_count = 5
 const shouldUpdate = true
+const HasPagination = true
 
 /* Good */
 const pageCount = 5
 const shouldUpdate = true
-
-/* Good as well */
-const page_count = 5
-const should_update = true
+const hasPagination = true
 ```
 
-## S-I-D
+## Short, Intuitive and Descriptive
 
 A name must be _short_, _intuitive_ and _descriptive_:
 
@@ -97,17 +95,17 @@ A name should not duplicate the context in which it is defined. Always remove th
 
 ```js
 class MenuItem {
-  /* Method name duplicates the context (which is "MenuItem") */
-  handleMenuItemClick = (event) => { ... }
+	/* Method name duplicates the context (which is "MenuItem") */
+	handleMenuItemClick = (event) => { ... }
 
-  /* Reads nicely as `MenuItem.handleClick()` */
-  handleClick = (event) => { ... }
+	/* Reads nicely as `MenuItem.handleClick()` */
+	handleClick = (event) => { ... }
 }
 ```
 
-## Reflect the expected result
+## Be consistent
 
-A name should reflect the expected result.
+Names should be consistent and reflect the expected result.
 
 ```jsx
 /* Bad */
@@ -115,6 +113,10 @@ const isEnabled = itemCount > 3
 return <Button disabled={!isEnabled} />
 
 /* Good */
+const isEnabled = itemCount > 3
+return <Button enabled={isEnabled} />
+
+/* Also good */
 const isDisabled = itemCount <= 3
 return <Button disabled={isDisabled} />
 ```
@@ -123,25 +125,25 @@ return <Button disabled={isDisabled} />
 
 # Naming functions
 
-## A/HC/LC Pattern
+## A/HC/LC/A Pattern
 
 There is a useful pattern to follow when naming functions:
 
 ```
-prefix? + action (A) + high context (HC) + low context? (LC)
+action (A) + high context (HC) + low context? (LC) + action (A)
 ```
 
 Take a look at how this pattern may be applied in the table below.
 
-| Name                   | Prefix   | Action (A) | High context (HC) | Low context (LC) |
-| ---------------------- | -------- | ---------- | ----------------- | ---------------- |
-| `getUser`              |          | `get`      | `User`            |                  |
-| `getUserMessages`      |          | `get`      | `User`            | `Messages`       |
-| `handleClickOutside`   |          | `handle`   | `Click`           | `Outside`        |
-| `shouldDisplayMessage` | `should` | `Display`  | `Message`         |                  |
+| Name                  | Action (A) | High context (HC) | Low context (LC) | Action (A) |
+| --------------------- | ---------- | ----------------- | ---------------- | ---------- |
+| `getUser`             | `get`      | `User`            |                  |            |
+| `getUserMessages`     | `get`      | `User`            | `Messages`       |            |
+| `handleClickOutside`  | `handle`   | `Click`           | `Outside`        |            |
+| `updateUser`          | `update`   | `User`            |                  |            |
+| `userUpdate`          |            | `user`            |                  | `Update`   |
 
-> **Note:** The order of context affects the meaning of a variable. For example, `shouldUpdateComponent` means _you_ are about to update a component, while `shouldComponentUpdate` tells you that _component_ will update on itself, and you are but controlling when it should be updated.
-> In other words, **high context emphasizes the meaning of a variable**.
+> **Note:** The action order affects what a variable means. For example, `updateUser` tells you this function lives outside of User and is responsible for updating a User (maybe even change it completely), while `userUpdate` tells you this function lives inside of User and is responsible for updating _this particular_ User.
 
 ---
 
@@ -155,7 +157,7 @@ Accesses data immediately (i.e. shorthand getter of internal data).
 
 ```js
 function getFruitCount() {
-  return this.fruits.length
+	return this.fruits.length
 }
 ```
 
@@ -169,7 +171,7 @@ Sets a variable in a declarative way, with value `A` to value `B`.
 let fruits = 0
 
 function setFruits(nextFruits) {
-  fruits = nextFruits
+	fruits = nextFruits
 }
 
 setFruits(5)
@@ -216,7 +218,7 @@ function removeFilter(filterName, filters) {
 }
 
 const selectedFilters = ['price', 'availability', 'size']
-removeFilter('price', selectedFilters)
+removeFilter('price', selectedFilters) // ['availability', 'size']
 ```
 
 > See also [delete](#delete).
