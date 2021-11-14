@@ -1,8 +1,8 @@
 This is a fork of https://github.com/kettanaito/naming-cheatsheet
 
 <p align="center">
-  <a href="https://github.com/andrecasal/opinionated-naming-cheatsheet">
-    <img src="./naming-cheatsheet.png" alt="Opinionated naming cheatsheet" />
+  <a href="https://github.com/andrecasal/javascript-naming-cheatsheet">
+    <img src="./naming-cheatsheet.png" alt="Naming cheatsheet for JavaScript and React" />
   </a>
 </p>
 
@@ -25,7 +25,7 @@ This is a fork of https://github.com/kettanaito/naming-cheatsheet
 
 Naming things is hard. This sheet attempts to make it easier.
 
-Although these suggestions can be applied to any programming language, I will use JavaScript to illustrate them in practice.
+Although these suggestions can be applied to any programming language, I will use JavaScript and React to illustrate them in practice.
 
 ## English language
 
