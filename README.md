@@ -1,3 +1,5 @@
+This is a fork of https://github.com/kettanaito/naming-cheatsheet
+
 <p align="center">
   <a href="https://github.com/andrecasal/opinionated-naming-cheatsheet">
     <img src="./naming-cheatsheet.png" alt="Opinionated naming cheatsheet" />
@@ -8,7 +10,7 @@
 
 - [English language](#english-language)
 - [Naming convention](#naming-convention)
-- [S-I-D](#s-i-d)
+- [Short Intuitive Descriptive](#short-intuitive-descriptive)
 - [Avoid contractions](#avoid-contractions)
 - [Avoid context duplication](#avoid-context-duplication)
 - [Reflect the expected result](#reflect-the-expected-result)
