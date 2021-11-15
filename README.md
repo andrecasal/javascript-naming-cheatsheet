@@ -81,7 +81,7 @@ const shouldPaginate = postCount > 10 // alternatively
 
 ## Avoid contractions
 
-Do **not** use contractions. They contribute to nothing but decreased readability of the code. Finding a short, descriptive name may be hard, but contraction is not an excuse for not doing so.
+Do **not** use contractions, except for the established ones: `min`, `max` and `prev`. They contribute to nothing but decreased readability of the code. Finding a short, descriptive name may be hard, but contraction is not an excuse for not doing so.
 
 ```js
 /* Bad */
